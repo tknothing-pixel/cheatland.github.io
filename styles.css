@@ -1,0 +1,283 @@
+/* Подключаем локальный шрифт с помощью @font-face */
+@font-face {
+    font-family: 'SF'; /* Имя шрифта, которое будет использоваться */
+    src: url('fonts/sf.ttf') format('opentype'); /* Указываем путь к шрифту */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Основной стиль для всего сайта */
+body {
+    font-family: 'SF', sans-serif; /* Современный шрифт */
+    background: #000000;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+    opacity: 0; /* Изначально скрываем весь контент */
+    animation: fadeIn 1s forwards; /* Применяем анимацию */
+}
+
+/* Анимация появления контента */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Шапка сайта */
+header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Изначально скрываем шапку */
+    animation: fadeIn 1s 0.5s forwards; /* Задержка на 0.5s */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Основной контент */
+.content {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    opacity: 0; /* Изначально скрываем контент */
+    animation: fadeIn 1s 1s forwards; /* Задержка на 1s */
+}
+
+/* Карточки */
+.card {
+    background: #333333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0; /* Изначально скрываем карточки */
+    animation: fadeIn 1s 1.5s forwards; /* Задержка на 1.5s */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+/* Новый стиль для маленьких закругленных зеленых квадратиков */
+.badge {
+    display: inline-block;
+    padding: 0px 5px;
+    background-color: #28a745; /* Зеленый цвет */
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 5px; /* Скругление углов */
+    text-transform: uppercase; /* Преобразуем в верхний регистр */
+    text-align: center;
+    white-space: nowrap; /* Запрещаем перенос текста */
+    position: relative; /* Задаем относительное позиционирование */
+    top: -35px; /* Смещаем бейдж на 5 пикселей вверх */
+}
+
+.badger {
+    display: inline-block;
+    padding: 0px 5px;
+    background-color: #3b01ea; /* Синий цвет */
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 5px; /* Скругление углов */
+    text-transform: uppercase; /* Преобразуем в верхний регистр */
+    text-align: center;
+    white-space: nowrap; /* Запрещаем перенос текста */
+    position: relative; /* Задаем относительное позиционирование */
+    top: -35px; /* Смещаем бейдж на 5 пикселей вверх */
+}
+
+.badgeyt {
+    display: inline-block;
+    padding: 0px 5px;
+    background-color: #fb1a32; /* Синий цвет */
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 5px; /* Скругление углов */
+    text-transform: uppercase; /* Преобразуем в верхний регистр */
+    text-align: center;
+    white-space: nowrap; /* Запрещаем перенос текста */
+    position: relative; /* Задаем относительное позиционирование */
+    top: -5px;
+}
+
+/* Описание карточки */
+.card p {
+    font-size: 1rem;
+    color: #ffffff;
+    line-height: 1.5;
+    border: 2px solid #4d4d4d; /* Белая граница вокруг описания */
+    padding: 10px; /* Отступы внутри описания, чтобы граница не накладывалась на текст */
+    border-radius: 4px; /* Скругленные углы для границы */
+}
+
+/* Ссылка для скачивания */
+.download-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border: 2px solid #4d4d4d;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.download-link:hover {
+    background-color: #4d4d4d;
+    color: #fff;
+}
+
+footer {
+    background-color: #191919;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    opacity: 0; /* Изначально скрываем футер */
+    animation: fadeIn 1s 2s forwards; /* Задержка на 2s */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Кнопка для YouTube */
+.youtube-button {
+    display: inline-block;
+    background-color: #fb1a32; /* Красный цвет для кнопки */
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0px 5px;
+    border-radius: 5px; /* Закругленные углы */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: background-color 0.3s ease;
+}
+
+.youtube-button:hover {
+    background-color: #e10f2b; /* Темный оттенок при наведении */
+}
+
+/* Медиазапросы для адаптивности */
+
+/* Мобильные устройства (до 600px) */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem; /* Уменьшаем размер шрифта для заголовка */
+    }
+
+    .content {
+        padding: 20px;
+        grid-template-columns: 1fr; /* Одна колонка для мобильных */
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h2 {
+        font-size: 1.5rem;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .youtube-button {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+}
+
+/* Планшеты (от 601px до 1024px) */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Меньше колонок */
+    }
+
+    header h1 {
+        font-size: 2.2rem; /* Уменьшаем размер заголовка */
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .card h2 {
+        font-size: 1.6rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .youtube-button {
+        font-size: 0.8rem;
+    }
+}
+
+/* Десктопы (от 1025px и больше) */
+@media (min-width: 1025px) {
+    .content {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Стандартное количество колонок */
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 1.8rem;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+
+    .youtube-button {
+        font-size: 1rem;
+    }
+}
